@@ -10,10 +10,13 @@ namespace rtprototype.ViewModels
 {
     public class MainPageViewModel : ViewModelBase
     {
+        public String Video { get; set; }
+
         public MainPageViewModel(INavigationService navigationService)
             : base(navigationService)
         {
             Title = "Main Page";
+            Video = "intro_tour_video_1080.mp4";
         }
     }
 }

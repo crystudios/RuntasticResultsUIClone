@@ -1,41 +1,49 @@
 <?xml version="1.0" encoding="utf-8"?>
-<ContentPage xmlns="http://xamarin.com/schemas/2014/forms" xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" x:Class="rtprototype.Views.MainPage" Title="{Binding Title}">
-    <StackLayout BackgroundColor="Gray" Spacing="10">
-        <StackLayout.Padding>
-        <OnPlatform x:TypeArguments="Thickness" 
-                    Android="20,50,20,20" 
-                    iOS="20,50,20,50"/>
-        </StackLayout.Padding>
-        <StackLayout Orientation="Horizontal" VerticalOptions="StartAndExpand"> 
-            <Image HorizontalOptions="EndAndExpand" Margin="5" WidthRequest="50"
-                   Source="ic_adidas_logo" VerticalOptions="Center" /> 
-            
-            <Image BackgroundColor="White" WidthRequest="2" Margin="5" 
-                   VerticalOptions="Center" HeightRequest="50" />
-            
-            <Image HorizontalOptions="StartAndExpand" Source="results_logo" Margin="5"
-                   WidthRequest="150"/>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms" 
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" 
+             x:Class="rtprototype.Views.MainPage" 
+             xmlns:Controls="clr-namespace:rtprototype.Controls" 
+             Title="{Binding Title}">
+    <Grid>
+        <Controls:Video x:Name="vdBackground" Source="{Binding Video}" Loop="true" 
+                        HorizontalOptions="Fill" VerticalOptions="Fill"/>
+        <StackLayout Spacing="10">
+            <StackLayout.Padding>
+            <OnPlatform x:TypeArguments="Thickness" 
+                        Android="20,50,20,20" 
+                        iOS="20,50,20,50"/>
+            </StackLayout.Padding>
+            <StackLayout Orientation="Horizontal" VerticalOptions="StartAndExpand"> 
+                <Image HorizontalOptions="EndAndExpand" Margin="5" WidthRequest="50"
+                       Source="ic_adidas_logo" VerticalOptions="Center" /> 
+                
+                <Image BackgroundColor="White" WidthRequest="2" Margin="5" 
+                       VerticalOptions="Center" HeightRequest="50" />
+                
+                <Image HorizontalOptions="StartAndExpand" Source="results_logo" Margin="5"
+                       WidthRequest="150"/>
+            </StackLayout>
+            <StackLayout Orientation="Horizontal" VerticalOptions="EndAndExpand"> 
+                <Button Text="CONTINUE" HorizontalOptions="FillAndExpand" 
+                        TextColor="White" FontAttributes="Bold" BackgroundColor="#4267B2"
+                        BorderRadius="25" HeightRequest="50" Image="ic_f_icon"/>
+                <Button Text="CONTINUE" HorizontalOptions="FillAndExpand" 
+                        BackgroundColor="White" BorderRadius="25" HeightRequest="50"
+                        FontAttributes="Bold" TextColor="Gray" Image="ic_google_g_logo"/>
+            </StackLayout>
+            <StackLayout> 
+                <Button Text="SIGN UP" TextColor="White" BorderColor="White" HeightRequest="50"
+                        BorderWidth="1" BorderRadius="25" FontAttributes="Bold"
+                        BackgroundColor="Transparent"/>
+            </StackLayout>
+            <StackLayout Orientation="Horizontal"> 
+                <Label Text="Already have an account? " 
+                       HorizontalOptions="EndAndExpand"
+                       HorizontalTextAlignment="Center" 
+                       VerticalTextAlignment="Center" TextColor="White"/>
+                <Button Text="LOG IN" FontAttributes="Bold" TextColor="#4267B2" 
+                        HorizontalOptions="StartAndExpand" BackgroundColor="Transparent" /> 
+            </StackLayout >
         </StackLayout>
-        <StackLayout Orientation="Horizontal" VerticalOptions="EndAndExpand"> 
-            <Button Text="CONTINUE" HorizontalOptions="FillAndExpand" 
-                    TextColor="White" FontAttributes="Bold" BackgroundColor="#4267B2"
-                    BorderRadius="25" HeightRequest="50" Image="ic_f_icon"/>
-            <Button Text="CONTINUE" HorizontalOptions="FillAndExpand" 
-                    BackgroundColor="White" BorderRadius="25" HeightRequest="50"
-                    FontAttributes="Bold" TextColor="Gray" Image="ic_google_g_logo"/>
-        </StackLayout>
-        <StackLayout> 
-            <Button Text="SIGN UP" TextColor="White" BorderColor="White" HeightRequest="50"
-                    BorderWidth="1" BorderRadius="25" FontAttributes="Bold"
-                    BackgroundColor="Transparent"/>
-        </StackLayout>
-        <StackLayout Orientation="Horizontal"> 
-            <Label Text="Already have an account? " 
-                   HorizontalOptions="EndAndExpand"
-                   HorizontalTextAlignment="Center" 
-                   VerticalTextAlignment="Center" TextColor="White"/>
-            <Button Text="LOG IN" FontAttributes="Bold" TextColor="#4267B2" 
-                    HorizontalOptions="StartAndExpand" BackgroundColor="Transparent" /> 
-        </StackLayout >
-    </StackLayout>
+    </Grid>
 </ContentPage>
